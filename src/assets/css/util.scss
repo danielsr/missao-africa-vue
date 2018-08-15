@@ -1,9 +1,0 @@
-
-@for $i from 1 through 5 {
-  $size: $i * 5;
-  .p-#{$i} { padding: #{$size}px; }
-  .pt-#{$i} { padding-top: #{$size}px; }
-  .pr-#{$i} { padding-right: #{$size}px; }
-  .pb-#{$i} { padding-bottom: #{$size}px; }
-  .pl-#{$i} { padding-left: #{$size}px; }
-}

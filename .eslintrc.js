@@ -4,16 +4,15 @@ module.exports = {
     node: true,
     jest: true
   },
-  'extends': [
-    'plugin:vue/essential',
-    '@vue/airbnb'
-  ],
+  extends: ['plugin:vue/essential', '@vue/airbnb'],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'comma-dangle': 'off'
+    'comma-dangle': 'off',
+    'import/extensions': 'off',
+    'import/prefer-default-export': 'off'
   },
   parserOptions: {
     parser: 'babel-eslint'
   }
-}
+};
