@@ -1,0 +1,7 @@
+[ ] Merge schemas and resolvers
+[ ] Toaster
+[ ] Handle graphql errors
+[ ] Auth with token
+[ ] Login
+[ ] Add FontAwesome icons
+[ ] Server env variables

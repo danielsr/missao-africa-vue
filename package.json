@@ -1,31 +1,38 @@
 {
-  "name": "missao-africa-vue",
-  "version": "0.1.0",
-  "private": true,
+  "name": "missao-africa",
+  "version": "1.0.0",
+  "description": "Missao Africa",
+  "author": "Daniel Rodrigues",
+  "license": "ISC",
+  "engines": {
+    "yarn": "1.7.0"
+  },
+  "main": "src/index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "dev": "concurrently \"npm run dev:server\" \"npm run serve --prefix client\"",
+    "dev:server": "nodemon --exec babel-node src/index.js",
+    "start": "NODE_ENV=production babel-node src/index.js",
+    "postinstall": "npm run install:client --prefix client",
+    "heroku-postbuild": "npm run build --prefix client"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "concurrently": "^3.6.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.10",
-    "vee-validate": "^2.1.0-beta.7",
-    "vue": "^2.5.17",
-    "vue-router": "^3.0.1",
-    "vuex": "^3.0.1"
+    "mongoose": "^5.1.2"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.0.0",
-    "@vue/cli-plugin-eslint": "^3.0.0",
-    "@vue/cli-plugin-unit-jest": "^3.0.0",
-    "@vue/cli-service": "^3.0.0",
-    "@vue/eslint-config-airbnb": "^3.0.0",
-    "@vue/test-utils": "^1.0.0-beta.20",
-    "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "^23.0.1",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.0.1",
-    "vue-template-compiler": "^2.5.17"
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "nodemon": "^1.14.12"
   }
 }
