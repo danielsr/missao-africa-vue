@@ -1,12 +1,14 @@
 <template>
-  <input type="submit" class="btn primary" :value="text" />
+  <input :type="type" :class="['btn', className]" :value="text" />
 </template>
 
 <script>
 export default {
   name: 'FormButton',
   props: {
-    text: String
+    text: String,
+    type: { type: String, default: 'submit' },
+    className: String
   }
 };
 </script>

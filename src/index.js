@@ -3,7 +3,7 @@ import path from 'path';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import mongoose from 'mongoose';
-// import auth from './routes/auth'
+import auth from './routes/auth';
 
 mongoose.connect(
   process.env.MONGO_URI,
@@ -18,7 +18,7 @@ if (process.env.NODE_ENV !== 'production') {
   server.use('*', cors({ origin: 'http://localhost:8080' }));
 }
 
-// auth(server)
+auth(server);
 
 if (process.env.NODE_ENV === 'production') {
   server.use(express.static(path.resolve(__dirname, '..', 'client', 'dist')));

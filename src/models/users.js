@@ -1,12 +1,12 @@
-import mongoose from 'mongoose'
-import { saveOrUpdate } from '../util/mongodb'
+import mongoose from 'mongoose';
+import { saveOrUpdate } from '../utils/mongodb';
 
 const User = mongoose.model('user', mongoose.Schema({
   name: String,
   email: String,
   pwd: String
-}))
+}));
 
-User.saveOrUpdate = saveOrUpdate(User)
+User.saveOrUpdate = saveOrUpdate(User);
 
-export { User }
+export { User };

@@ -2,19 +2,17 @@
   <form-tag @submit="onSubmit">
     <h1>Sponsors</h1>
     <div class="container grid">
-      <div class="col-6">
-        <form-input name="nome" label="Nome" v-model="form.nome" v-validate="'required'" :error="errors.first('nome')" />
-      </div>
-      <div class="col-6">
-        <form-input name="email" label="E-mail" v-model="form.email" v-validate="'required|email'" :error="errors.first('email')" />
-      </div>
-      <div class="col-6">
-        <form-button text="Enviar" :disabled="isInvalid" />
+      <form-input name="name" label="Nome" v-model="form.name" className="col-12" v-validate="'required'" :error="errors.first('name')" />
+      <form-input name="email" label="E-mail" v-model="form.email" className="col-6" v-validate="'required|email'" :error="errors.first('email')" />
+      <form-input name="pwd" label="Password" type="password" v-model="form.pwd" className="col-6" v-validate="'required'" :error="errors.first('pwd')" />
+      <div class="col-12">
+        <form-button text="Enviar" className="primary" :disabled="isInvalid" />
       </div>
     </div>
   </form-tag>
 </template>
 <script>
+import { mapActions } from 'vuex';
 import FormInput from '@/components/FormInput';
 import FormButton from '@/components/FormButton';
 import FormTag from '@/components/FormTag';
@@ -32,9 +30,9 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log(this.form);
-      this.$store.commit('setLoading', true);
-    }
+      this.register(this.form);
+    },
+    ...mapActions(['register'])
   },
   computed: {
     isInvalid() {

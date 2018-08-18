@@ -1,2 +1,2 @@
-export { Sponsor } from './sponsors'
-export { User } from './users'
+export { Sponsor } from './sponsors';
+export { User } from './users';
