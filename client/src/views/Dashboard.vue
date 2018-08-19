@@ -1,8 +1,9 @@
 <template>
   <div class="container grid">
     <div class="col-12 pt-3 pb-3">
-      <data-grid :model="model" :items="users" />
+      <data-grid :model="model" :items="users" editRoute="/sponsors/55" />
     </div>
+    <router-view></router-view>
   </div>
 </template>
 <script>
