@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-  name: 'ModalDefault',
+  name: 'VModal',
   props: {
     title: String
   }

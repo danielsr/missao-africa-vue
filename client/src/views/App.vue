@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <div class="header">
-      <nav-bar title="Missão África" :items="menuItems" />
+      <v-menu title="Missão África" :items="menuItems" />
     </div>
     <div class="main">
       <div class="container">
@@ -11,22 +11,22 @@
     <div class="footer">
       <div class="container text-center pt-3">Missão África</div>
     </div>
-    <content-spinner v-if="isLoading" />
+    <v-spinner v-if="isLoading" />
   </div>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar';
-import ContentSpinner from '@/components/ContentSpinner';
+import VMenu from '@/components/VMenu';
+import VSpinner from '@/components/VSpinner';
 
 export default {
   name: 'App',
   data: () => ({
-    menuItems: [{ to: 'sponsors', title: 'Sponsors' }]
+    menuItems: [{ to: 'users', title: 'Users' }]
   }),
   components: {
-    NavBar,
-    ContentSpinner
+    VMenu,
+    VSpinner
   },
   computed: {
     isLoading() {

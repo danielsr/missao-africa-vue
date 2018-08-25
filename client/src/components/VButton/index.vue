@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'FormButton',
+  name: 'VButton',
   props: {
     text: String,
     type: { type: String, default: 'submit' },

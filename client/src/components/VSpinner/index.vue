@@ -5,7 +5,7 @@
 </template>
 <script>
 export default {
-  name: 'ContentSpinner'
+  name: 'VSpinner'
 };
 </script>
 

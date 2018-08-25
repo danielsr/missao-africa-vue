@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'NavBar',
+  name: 'VMenu',
   props: {
     title: String,
     items: Array

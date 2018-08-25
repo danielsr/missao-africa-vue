@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'FormInput',
+  name: 'VInput',
   props: {
     label: String,
     name: String,

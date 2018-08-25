@@ -1,17 +1,18 @@
 <template>
   <div class="container grid">
+    <h1>Users</h1>
     <div class="col-12 pt-3 pb-3">
-      <data-grid :model="model" :items="users" editRoute="/sponsors/55" />
+      <v-grid :model="model" :items="users" editRoute="/users/55" />
     </div>
     <router-view></router-view>
   </div>
 </template>
 <script>
 import { mapActions, mapState } from 'vuex';
-import DataGrid from '@/components/DataGrid';
+import VGrid from '@/components/VGrid';
 
 export default {
-  name: 'Dashboard',
+  name: 'Users',
   mounted: function() {
     this.loadUsers();
   },
@@ -19,7 +20,7 @@ export default {
     model: [{ name: 'name', label: 'Nome' }, { name: 'email', label: 'E-mail' }]
   }),
   components: {
-    DataGrid
+    VGrid
   },
   methods: {
     ...mapActions(['loadUsers'])

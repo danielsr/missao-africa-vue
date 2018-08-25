@@ -21,7 +21,7 @@
 
 <script>
 export default {
-  name: 'DataGrid',
+  name: 'VGrid',
   props: {
     items: Array,
     model: Array,

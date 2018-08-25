@@ -11,6 +11,6 @@ import VeeValidate from 'vee-validate';
 Vue.use(VeeValidate);
 
 export default {
-  name: 'FormTag'
+  name: 'VForm'
 };
 </script>
