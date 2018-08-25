@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import VInput from '@/components/VInput';
 import VButton from '@/components/VButton';
 import VForm from '@/components/VForm';
@@ -32,8 +33,9 @@ export default {
   },
   methods: {
     onSubmit() {
-      console.log(this.form);
-    }
+      this.login(this.form);
+    },
+    ...mapActions(['login'])
   },
   computed: {
     isInvalid() {

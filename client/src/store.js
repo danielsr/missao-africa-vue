@@ -7,7 +7,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     isLoading: false,
-    users: []
+    users: [],
+    authUser: null
   },
   actions: {
     async register({ commit }, user) {
@@ -16,11 +17,25 @@ export default new Vuex.Store({
       console.log(newUser);
       commit('setLoading', false);
     },
-    async loadUsers({ commit }) {
+    async login({ commit }, user) {
       commit('setLoading', true);
-      const users = await api.get('users');
-      commit('loadedUsers', users);
+      const res = await api.post('login', user);
+      if (res) {
+        localStorage.setItem('token', res.token);
+        commit('setAuthUser', res.authUser);
+      }
       commit('setLoading', false);
+    },
+    async loadUsers({ commit }) {
+      try {
+        commit('setLoading', true);
+        const users = await api.get('users');
+        commit('loadedUsers', users);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        commit('setLoading', false);
+      }
     }
   },
   mutations: {
@@ -29,6 +44,9 @@ export default new Vuex.Store({
     },
     loadedUsers(state, users) {
       state.users = users;
+    },
+    setAuthUser(state, user) {
+      state.authUser = user;
     }
   }
 });
