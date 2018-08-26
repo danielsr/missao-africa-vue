@@ -22,6 +22,12 @@
 
 .pointer { cursor: pointer; }
 
+.label { 
+  font-size: 12px;
+  line-height: 20px;
+  &-danger { color: $color-danger; }
+}
+
 @for $i from 1 through 5 {
   $size: $i * 5;
   .p-#{$i} { padding: #{$size}px; }

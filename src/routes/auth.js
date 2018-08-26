@@ -3,21 +3,15 @@ import bcrypt from 'bcryptjs';
 import pick from 'lodash/pick';
 import { User } from '../models';
 
-function unauthorized(res) {
-  return res.status(401).send({ msg: 'Unauthorized' });
-}
+const unauthorized = res => res.status(401).send({ msg: 'Unauthorized' });
 
 export default (server) => {
   server.post('/login', async (req, res) => {
     const { email, pwd } = req.body;
     const user = await User.findOne({ email });
 
-    if (!user) {
-      return unauthorized(res);
-    }
-
-    if (!bcrypt.compareSync(pwd, user.pwd)) {
-      return unauthorized(res);
+    if (!user || !bcrypt.compareSync(pwd, user.pwd)) {
+      return res.status(403).send({ msg: 'Invalid e-mail or password' });
     }
 
     const authUser = pick(user, ['name', 'email']);
@@ -41,7 +35,7 @@ export default (server) => {
 
   server.get('/users', async (req, res) => {
     const users = await User.find();
-    return res.status(200).send(users);
+    res.status(200).send(users);
   });
 
   server.post('/register', (req, res) => {
