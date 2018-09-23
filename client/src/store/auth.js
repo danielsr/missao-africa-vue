@@ -1,4 +1,5 @@
 import api from '../api';
+import router from '../router';
 
 export default {
   state: {
@@ -15,9 +16,10 @@ export default {
       commit('setLoading', true);
       const res = await api.post('login', user);
       if (res.success) {
-        localStorage.setItem('token', res.token);
+        localStorage.setItem('token', res.data.token);
         commit('setAuthUser', res.data.authUser);
         commit('setMsg', { key: 'login', msg: undefined });
+        router.push('/');
       } else {
         commit('setMsg', { key: 'login', msg: res.data.msg });
       }

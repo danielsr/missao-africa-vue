@@ -25,9 +25,9 @@ export default {
   methods: {
     ...mapActions(['loadUsers'])
   },
-  computed: {
-    ...mapState(['users'])
-  }
+  computed: mapState({
+    users: state => state.users.users
+  })
 };
 </script>
 
