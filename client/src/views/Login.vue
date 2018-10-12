@@ -1,6 +1,6 @@
 <template>
-  <v-modal title="Login">
-    <v-form @submit="onSubmit">
+  <v-form @submit="onSubmit">
+    <v-modal title="Login">
       <div class="container grid">
         <v-input
           name="email"
@@ -19,15 +19,13 @@
           v-validate="'required'"
           :error="errors.first('pwd')"
         />
-        <div class="col-3">
-          <v-button text="Login" class="primary" :disabled="isInvalid"/>
-        </div>
-        <div class="col-9">
-          <span class="label label-danger" v-if="msg">{{msg}}</span>
-        </div>
       </div>
-    </v-form>
-  </v-modal>
+      <template slot="footer">
+        <v-button text="Login" class="primary" :disabled="isInvalid"/>
+        <span class="label label-danger" v-if="msg">{{msg}}</span>
+      </template>
+    </v-modal>
+  </v-form>
 </template>
 
 <script>
