@@ -29,7 +29,7 @@
         />
       </div>
       <template slot="footer">
-        <v-button text="Enviar" class="primary" :disabled="isInvalid"/>
+        <v-button text="Enviar" color="primary" :disabled="isInvalid"/>
         <router-link to="/users">
           <v-button text="Cancelar" type="button"/>
         </router-link>

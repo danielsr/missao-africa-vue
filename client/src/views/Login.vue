@@ -21,8 +21,8 @@
         />
       </div>
       <template slot="footer">
-        <v-button text="Login" class="primary" :disabled="isInvalid"/>
-        <span class="label label-danger" v-if="msg">{{msg}}</span>
+        <v-button text="Login" color="primary" :disabled="isInvalid"/>
+        <span v-if="msg">{{msg}}</span>
       </template>
     </v-modal>
   </v-form>

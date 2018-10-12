@@ -1,5 +1,5 @@
 <template>
-  <table class="table fill">
+  <table class="table">
     <thead>
       <tr>
         <th v-for="field in model" :key="field.name">{{field.label}}</th>
@@ -11,7 +11,7 @@
         <td v-for="field in model" :key="field.name">{{item[field.name]}}</td>
         <td v-if="editRoute" class="text-center">
           <router-link :to="editRoute">
-            <i class="fas fa-edit" />
+            <i class="fas fa-edit"/>
           </router-link>
         </td>
       </tr>
@@ -29,6 +29,31 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+@import '@/style/vars.scss';
 
-<style>
+.table {
+  border-spacing: 0px;
+  width: 100%;
+
+  th,
+  td {
+    padding: 7px;
+    text-align: left;
+  }
+
+  thead th {
+    border-bottom: 1px solid $color-gray-dark;
+  }
+
+  tbody tr:hover {
+    transition: 0.3s;
+    background-color: $color-gray !important;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: $color-gray-light;
+  }
+}
 </style>
+

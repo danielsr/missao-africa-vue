@@ -35,3 +35,28 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+@import '@/style/vars.scss';
+
+.layout {
+  display: grid;
+  grid-template-rows: 50px auto 70px;
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  grid-row: 1 / 2;
+  background: $color-gray-dark;
+}
+
+.main {
+  grid-row: 2 / 3;
+}
+
+.footer {
+  grid-row: 3 / 4;
+  background-color: $color-gray;
+}
+</style>
+
