@@ -36,10 +36,9 @@ export default {
 
 .modal {
   position: relative;
-  background-color: #fefefe;
+  background-color: $color-white;
   margin: auto;
   padding: 0px;
-  border: 1px solid #888;
   max-width: 90%;
   max-height: 90%;
   width: 600px;
@@ -62,26 +61,22 @@ export default {
 }
 
 .modal-header {
-  border-bottom: 1px solid $color-gray-light;
-  padding: 15px;
-  color: $color-primary;
+  background-color: $color-gray-dark;
+  color: $color-white;
   font-size: 1.5rem;
+  padding: 10px;
 }
 
 .modal-body {
   flex: 1;
-  padding: 15px;
+  padding: 10px;
 }
 
 .modal-footer {
-  border-top: 1px solid $color-gray-light;
-  height: 70px;
+  background-color: $color-gray-light;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  button:first-child {
-    margin-right: 20px;
-  }
 }
 </style>

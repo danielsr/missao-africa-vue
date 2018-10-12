@@ -12,18 +12,13 @@
   }         
 }
 
-.primary { background-color: $color-primary; color: $color-white; }
-.default { background-color: $color-gray; color: $color-gray-dark; }
-
 .fill { width: 100%; }
 
 .text-center { text-align: center !important; }
 .text-right { text-align: right !important; }
 
-.pointer { cursor: pointer; }
-
 .label { 
-  font-size: 12px;
+  font-size: 0.9rem;
   line-height: 20px;
   &-danger { color: $color-danger; }
 }

@@ -1,5 +1,5 @@
 <template>
-  <input :type="type" :class="['btn', className]" :value="text" />
+  <input :type="type" :class="['btn', className]" :value="text">
 </template>
 
 <script>

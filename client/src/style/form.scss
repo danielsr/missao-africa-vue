@@ -32,9 +32,15 @@
   border: 0px;
   border-radius: 3px;
   font-family: $font;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   margin-right: $size-2;
+  background-color: transparent; 
+  color: $color-gray-dark;
+
+  &.primary { background-color: $color-primary; color: $color-white; }
+  &.danger { background-color: $color-danger; color: $color-white; }
+  &.success { background-color: $color-success; color: $color-white; }
 }
 
 .btn:hover {
