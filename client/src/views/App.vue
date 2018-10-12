@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <div class="header">
-      <v-menu title="Missão África" :items="menuItems" />
+      <v-menu title="Missão África" :items="menuItems"/>
     </div>
     <div class="main">
       <div class="container">
@@ -11,7 +11,7 @@
     <div class="footer">
       <div class="container text-center pt-3">Missão África</div>
     </div>
-    <v-spinner v-if="isLoading" />
+    <v-spinner v-if="isLoading"/>
   </div>
 </template>
 
