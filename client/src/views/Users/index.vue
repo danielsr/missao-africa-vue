@@ -2,7 +2,7 @@
   <div class="container grid">
     <h1>Users</h1>
     <div class="col-12 pt-3 pb-3">
-      <v-grid :model="model" :items="users" editRoute="/users/55" />
+      <v-grid :model="model" :items="users" editRoute="/users/55" deleteRoute="/users/delete"/>
     </div>
     <router-view></router-view>
   </div>

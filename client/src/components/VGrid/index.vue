@@ -4,6 +4,7 @@
       <tr>
         <th v-for="field in model" :key="field.name">{{field.label}}</th>
         <th v-if="editRoute" class="text-center">Editar</th>
+        <th v-if="deleteRoute" class="text-center">Excluir</th>
       </tr>
     </thead>
     <tbody>
@@ -11,7 +12,12 @@
         <td v-for="field in model" :key="field.name">{{item[field.name]}}</td>
         <td v-if="editRoute" class="text-center">
           <router-link :to="editRoute">
-            <i class="fas fa-edit"/>
+            <v-icon icon="edit"/>
+          </router-link>
+        </td>
+        <td v-if="deleteRoute" class="text-center">
+          <router-link :to="deleteRoute">
+            <v-icon icon="trash"/>
           </router-link>
         </td>
       </tr>
@@ -20,12 +26,18 @@
 </template>
 
 <script>
+import VIcon from '@/components/VIcon';
+
 export default {
   name: 'VGrid',
   props: {
     items: Array,
     model: Array,
-    editRoute: String
+    editRoute: String,
+    deleteRoute: String
+  },
+  components: {
+    VIcon
   }
 };
 </script>
