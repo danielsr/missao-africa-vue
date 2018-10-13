@@ -28,12 +28,10 @@ export default {
   color: $color-white;
   padding: 15px 15px 0px 15px;
   text-decoration: none;
-}
 
-.menu-item:hover {
-  color: $color-gray-light;
-  cursor: pointer;
+  &:hover {
+    color: $color-gray-light;
+    cursor: pointer;
+  }
 }
 </style>
-
-

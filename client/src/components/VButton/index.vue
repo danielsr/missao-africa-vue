@@ -1,5 +1,5 @@
 <template>
-  <input :type="type" :class="className" :value="text">
+  <button :type="type" :class="color">{{text}}</button>
 </template>
 
 <script>
@@ -9,18 +9,13 @@ export default {
     text: String,
     color: { type: String, default: 'default' },
     type: { type: String, default: 'submit' }
-  },
-  computed: {
-    className: function() {
-      return `btn btn-${this.color}`;
-    }
   }
 };
 </script>
 <style lang="scss" scoped>
 @import '@/style/vars.scss';
 
-.btn {
+button {
   padding: 10px;
   border: 0px;
   border-radius: 3px;
@@ -29,30 +24,30 @@ export default {
   font-weight: bold;
   margin-right: $size-2;
 
-  &-default {
+  &.default {
     background-color: transparent;
     color: $color-gray-dark;
   }
-  &-primary {
+  &.primary {
     background-color: $color-primary;
     color: $color-white;
   }
-  &-danger {
+  &.danger {
     background-color: $color-danger;
     color: $color-white;
   }
-  &-success {
+  &.success {
     background-color: $color-success;
     color: $color-white;
   }
 }
 
-.btn:hover {
+button:hover {
   opacity: 0.85;
   cursor: pointer;
 }
 
-.btn:disabled {
+button:disabled {
   opacity: 0.85;
   cursor: default;
 }

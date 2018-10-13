@@ -28,26 +28,25 @@ export default {
   max-width: 100%;
   margin-bottom: $size-3;
   margin-right: $size-2;
-}
 
-.form-control label {
-  padding: 0px 0px 5px 3px;
-  font-weight: bold;
-}
+  label {
+    padding: 0px 0px 5px 3px;
+    font-weight: bold;
+  }
 
-.form-control input {
-  padding: 8px;
-  border: 1px solid $color-gray-dark;
-  border-radius: 3px;
-  font-family: $font;
-  font-size: 16px;
-  color: $color-gray-dark;
-}
+  input {
+    padding: 8px;
+    border: 1px solid $color-gray-dark;
+    border-radius: 3px;
+    font-family: $font;
+    font-size: 16px;
+    color: $color-gray-dark;
+  }
 
-.form-control span {
-  padding-top: $size-1;
-  font-size: 12px;
-  color: $color-danger;
+  span {
+    padding-top: $size-1;
+    font-size: 12px;
+    color: $color-danger;
+  }
 }
 </style>
-

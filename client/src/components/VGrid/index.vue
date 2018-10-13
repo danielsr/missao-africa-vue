@@ -1,5 +1,5 @@
 <template>
-  <table class="table">
+  <table>
     <thead>
       <tr>
         <th v-for="field in model" :key="field.name">{{field.label}}</th>
@@ -32,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/style/vars.scss';
 
-.table {
+table {
   border-spacing: 0px;
   width: 100%;
 
